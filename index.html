@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="customs.css">
+  <!-- VUE JS -->
+  <script src="https://unpkg.com/vue@next"></script>
+  <title>VUE JS Tutorial</title>
+</head>
+
+<body>
+  <header style="background: #3eaf7c;">
+    <h1 class="text-center text-white">VUE JS Practice</h1>
+  </header>
+  <div class="container">
+    <h2><span class="hasTag"> # </span> Declarative Rendering</h2>
+    <p>Data binding | Attribute binding | Method | Events | Method parameter</p>
+    <hr>
+    <div id="app">
+      <h4>User Information</h4>
+      <ul>
+        <li><b>Name:</b> {{ user_info.name }} <span class="hints_text"> ( Data binding )</span></li>
+        <li><b>Email:</b> {{ user_info.email }}</li>
+        <li>
+          <b>Web:</b> <a :href="user_info.web" target="_blank">website</a>
+          <span class="hints_text"> ( Attribute binding )</span>
+        </li>
+        <li><b>Now Date:</b> {{ bd_msg }} <span class="hints_text"> ( Method | Events )</span> </li>
+        <button v-on:click="Reverse_msg" class="btn btn-primary"> Reverse </button>
+      </ul>
+      <p>
+        Counter: {{ counter }} <br>
+        <button @click="increment" class="btn btn-success mr-2">Increment</button>
+        <button @click="decrement" class="btn btn-danger">Decrement</button>
+        <span class="hints_text"> ( Method parameter )</span>
+        <br> <br>
+        <button @click="incrementByParameter(2)" class="btn btn-success mr-2">Increment - 2</button>
+        <button @click="decrementByParameter(2)" class="btn btn-danger">Decrement - 2</button>
+      </p>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div id="event_modifier">
+      <h2><span class="hasTag"> # </span> Event Modifiers</h2>
+      <p>@keyup | @click</p>
+      <hr>
+      <input type="text" @keyup="handleUserInput" placeholder="Enter your name"> <span class="hints_text"> ( using keyup
+        method )</span>
+      <br>
+      Welcome {{input_name}}
+      <br> <br>
+      <div class="card">
+        <div class="card-body" @click="handleCardEvent">
+          I am CARD, Click on Me <span class="hints_text"> ( click event on card )</span>
+          <br>
+          <button @click.stop="AddToCartEvent" class="btn btn-success">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="event_modifier" class="container mt-4">
+    <h2><span class="hasTag"> # </span> Two Way Data Binding</h2>
+    <p> | </p>
+    <hr>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
