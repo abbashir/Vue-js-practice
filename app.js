@@ -51,5 +51,28 @@ const event_modifier = {
 
     }
 }
+
+const TowWayDataBinding = {
+    data() {
+        return {
+            num: "",
+            result: ""
+        }
+    },
+    methods: {
+        getDouble(evt) {
+            this.result = this.num *2;
+        },
+        getSquare(evt) {
+            this.result = this.num * this.num;
+        },
+        Reset(evt) {
+            this.num = "";
+            this.result = "";
+        }
+
+    }
+}
 Vue.createApp(app_data).mount('#app')
 Vue.createApp(event_modifier).mount('#event_modifier')
+Vue.createApp(TowWayDataBinding).mount('#TowWayDataBinding')

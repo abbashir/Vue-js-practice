@@ -67,10 +67,19 @@
     </div>
   </div>
 
-  <div id="event_modifier" class="container mt-4">
+  <div id="TowWayDataBinding" class="container mt-4">
     <h2><span class="hasTag"> # </span> Two Way Data Binding</h2>
-    <p> | </p>
+    <p> v-model | v-model.trim | v-model.number</p>
     <hr>
+
+    <input v-model.number="num" type="text" placeholder="Enter a number">
+    <span class="hints_text"> ( v-model )</span> <br> <br>
+
+    <label>Entered No: </label> {{num}} <br>
+    <label>Result No: </label> {{result}}<br>
+    <button @click="getDouble" class="btn btn-success mr-2">Double</button>
+    <button @click="getSquare" class="btn btn-primary mr-2">Square</button>
+    <button @click="Reset" class="btn btn-danger">Reset</button>
   </div>
 
 
