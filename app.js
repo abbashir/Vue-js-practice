@@ -85,11 +85,28 @@ const ConditionalsandLoops = {
                 { text: 'Learn JavaScript' },
                 { text: 'Learn Vue' },
                 { text: 'Build something awesome' }
-              ]
+              ],
+            products: [
+                {name: "Laptop", price: 10},
+                {name: "Mouse", price: 15},
+                { name: "Keyboard", price: 5}
+            ],
+            newProduct: { name:'', price:0 }
         }
     },
     methods: {
+        AddProduct(){
+            if(this.newProduct.name == ""){
+                alert("please Enter Product name.")
+            }else{
+                this.products.push(this.newProduct)
+                this.newProduct = ""
+            }
 
+        },
+        removeProduct(i){
+            this.products.splice(i,1)
+        }
     }
 }
 Vue.createApp(app_data).mount('#app')

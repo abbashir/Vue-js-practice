@@ -97,6 +97,17 @@
       </li>
     </ol>
 
+    <h5>List Operation</h5>
+    <input type="text" v-model="newProduct.name">
+    <button class="btn btn-primary ml-2" @click="AddProduct">Add</button>
+    <li v-for="(product,i) in products" :key="product.name">
+      {{i}}. <b>Name:</b> {{ product.name }} <b>Price:</b> {{product.price}}
+      <button class="btn btn-danger m-2" @click="removeProduct(i)">Remove</button>
+      <br>
+      <input type="text" placeholder="Remark">
+    </li>
+    <hr>
+
   </div>
 
 
