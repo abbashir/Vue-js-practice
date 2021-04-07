@@ -62,6 +62,9 @@ const TowWayDataBinding = {
     methods: {
         getDouble(evt) {
             this.result = this.num *2;
+            if(this.result ==""){
+                alert("Please Enter Number")
+            }
         },
         getSquare(evt) {
             this.result = this.num * this.num;
@@ -73,6 +76,23 @@ const TowWayDataBinding = {
 
     }
 }
+
+const ConditionalsandLoops = {
+    data() {
+        return {
+            seen: true,
+            todos: [
+                { text: 'Learn JavaScript' },
+                { text: 'Learn Vue' },
+                { text: 'Build something awesome' }
+              ]
+        }
+    },
+    methods: {
+
+    }
+}
 Vue.createApp(app_data).mount('#app')
 Vue.createApp(event_modifier).mount('#event_modifier')
 Vue.createApp(TowWayDataBinding).mount('#TowWayDataBinding')
+Vue.createApp(ConditionalsandLoops).mount('#ConditionalsandLoops')

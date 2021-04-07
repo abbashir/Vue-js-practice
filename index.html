@@ -82,6 +82,23 @@
     <button @click="Reset" class="btn btn-danger">Reset</button>
   </div>
 
+  <div id="ConditionalsandLoops" class="container mt-4">
+    <hr>
+    <h2><span class="hasTag"> # </span> Conditionals and Loops</h2>
+    <p> v-if | v-for |</p>
+    <hr>
+    <h6>If else</h6>
+    <span v-if="seen">Now you see me</span>
+
+    <h6>For loop</h6>
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+
+  </div>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
