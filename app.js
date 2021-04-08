@@ -144,7 +144,27 @@ const ConditionalsandLoops = {
         }
     }
 }
+
+const InvoiceProject = {
+    data() {
+        return {
+            items: [
+                { description: "Website design", quantity: 1, price: 300 }
+              ]
+        }
+    },
+    methods: {
+        addRow() {
+            this.items.push({ description: "", quantity: 1, price: 0 });
+        },
+        removeRow(i) {
+            this.items.splice(i, 1)
+        }
+
+    }
+}
 Vue.createApp(app_data).mount('#app')
 Vue.createApp(event_modifier).mount('#event_modifier')
 Vue.createApp(TowWayDataBinding).mount('#TowWayDataBinding')
 Vue.createApp(ConditionalsandLoops).mount('#ConditionalsandLoops')
+Vue.createApp(InvoiceProject).mount('#InvoiceProject')

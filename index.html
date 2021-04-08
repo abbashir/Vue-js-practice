@@ -148,6 +148,88 @@
 
   </div>
 
+  <div id="ClassandStyleBinding" class="container mt-4">
+    <hr>
+    <h2><span class="hasTag"> # </span> Class and Style Binding</h2>
+    <p> class | style | </p>
+    <h1>Coming Soon</h1>
+  </div>
+
+  <div id="InvoiceProject" class="container m-4">
+    <hr>
+    <h2><span class="hasTag"> # </span> Invoice Project</h2>
+    <p> Product CURD | Calculation | </p>
+    <div class="container">
+      <hr>
+      <table class="table table-bordered">
+        <button class="btn btn-success" @click="addRow">Add row</button>
+        <tr v-for="(item, i) in items" :key="item">
+          <td>
+            <select class="form-control" id="sel1" required>
+              <option value="">Choose Product</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+          </td>
+
+          <td>
+            <input type="text" class="form-control" name="qty" placeholder="Quantity" required>
+          </td>
+
+          <td>
+            <input type="text" class="form-control" name="unit_price" placeholder="Unit Price" required>
+          </td>
+
+          <td>
+            <input type="text" class="form-control" name="total_price" placeholder="Total Price" readonly>
+          </td>
+
+          <td v-if="i > 0">
+            <button class="btn btn-danger" @click="removeRow(i)">Remove</button>
+          </td>
+
+          <td v-else>
+            Action
+          </td>
+
+        </tr>
+      </table>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <select class="form-control" id="sel1" required>
+            <option value="">Choose Product</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+
+        <div class="col-md-2">
+          <input type="text" class="form-control" name="qty" placeholder="Quantity" required>
+        </div>
+
+        <div class="col-md-2">
+          <input type="text" class="form-control" name="unit_price" placeholder="Unit Price" required>
+        </div>
+
+        <div class="col-md-3">
+          <input type="text" class="form-control" name="total_price" placeholder="Total Price" readonly>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-primary">Add</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
