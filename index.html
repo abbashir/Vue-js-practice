@@ -11,7 +11,7 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="customs.css">
   <!-- VUE JS -->
-  <script src="https://unpkg.com/vue@next"></script>
+  <script src="vue.global.js"></script>
   <title>VUE JS Tutorial</title>
 </head>
 
@@ -85,10 +85,12 @@
   <div id="ConditionalsandLoops" class="container mt-4">
     <hr>
     <h2><span class="hasTag"> # </span> Conditionals and Loops</h2>
-    <p> v-if | v-for |</p>
+    <p> v-if | v-for | computed property</p>
     <hr>
     <h6>If else</h6>
-    <span v-if="seen">Now you see me</span>
+    <span v-if="seen">Now you see me</span> <br>
+
+    <span v-if="2>1">Now you see me</span>
 
     <h6>For loop</h6>
     <ol>
@@ -97,14 +99,50 @@
       </li>
     </ol>
 
+    <h5>About Me</h5>
+
+    <table class="table table-bordered">
+      <tr v-for="(value, key, i) in AboutMe">
+        <th>{{ i }}</th>
+        <th>{{ key }}</th>
+        <td>{{ value }}</td>
+
+      </tr>
+    </table>
+
+    <h5>Product List</h5>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>SN</td>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Level <span class="hints_text"> ( if else )</span></td>
+        </tr>
+      </thead>
+      <tr v-for="(product,i) in products">
+        <th>{{ i +1}}</th>
+        <th>{{ product.name }}</th>
+        <td>{{ product.price }}</td>
+        <td>
+          <span v-if='product.price < 10'>Low Price</span>
+          <span v-else-if='product.price < 15'>Medium Price</span>
+          <span v-else>High Price</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Total Price: {{ total_price }} <span class="hints_text"> ( computed property )</span></td>
+      </tr>
+    </table>
+
     <h5>List Operation</h5>
     <input type="text" v-model="newProduct.name">
+    <input type="text" v-model="newProduct.price">
     <button class="btn btn-primary ml-2" @click="AddProduct">Add</button>
     <li v-for="(product,i) in products" :key="product.name">
       {{i}}. <b>Name:</b> {{ product.name }} <b>Price:</b> {{product.price}}
       <button class="btn btn-danger m-2" @click="removeProduct(i)">Remove</button>
-      <br>
-      <input type="text" placeholder="Remark">
     </li>
     <hr>
 

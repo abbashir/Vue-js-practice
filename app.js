@@ -61,8 +61,8 @@ const TowWayDataBinding = {
     },
     methods: {
         getDouble(evt) {
-            this.result = this.num *2;
-            if(this.result ==""){
+            this.result = this.num * 2;
+            if (this.result == "") {
                 alert("Please Enter Number")
             }
         },
@@ -81,31 +81,66 @@ const ConditionalsandLoops = {
     data() {
         return {
             seen: true,
-            todos: [
-                { text: 'Learn JavaScript' },
-                { text: 'Learn Vue' },
-                { text: 'Build something awesome' }
-              ],
-            products: [
-                {name: "Laptop", price: 10},
-                {name: "Mouse", price: 15},
-                { name: "Keyboard", price: 5}
+            todos: [{
+                    text: 'Learn JavaScript'
+                },
+                {
+                    text: 'Learn Vue'
+                },
+                {
+                    text: 'Build something awesome'
+                }
             ],
-            newProduct: { name:'', price:0 }
+            products: [{
+                    name: "Laptop",
+                    price: 10
+                },
+                {
+                    name: "Mouse",
+                    price: 15
+                },
+                {
+                    name: "Keyboard",
+                    price: 5
+                },
+                {
+                    name: "Desktop",
+                    price: 25
+                }
+            ],
+            newProduct: {
+                name: '',
+                price: ''
+            },
+            AboutMe: {
+                name: "Abdul Bashir",
+                nicname: "bashir",
+                Home: "Rajshshi"
+
+            }
+        }
+    },
+    computed: {
+        total_price() {
+            return this.products.reduce((sum, product) => {
+                return sum +=product.price;
+            },0);
         }
     },
     methods: {
-        AddProduct(){
-            if(this.newProduct.name == ""){
+        AddProduct() {
+            if (this.newProduct.name == "") {
                 alert("please Enter Product name.")
-            }else{
+            } else if (this.newProduct.price == "") {
+                alert("please Enter Product Price.")
+            } else {
                 this.products.push(this.newProduct)
-                this.newProduct = ""
+                this.newProduct.name = null;
             }
 
         },
-        removeProduct(i){
-            this.products.splice(i,1)
+        removeProduct(i) {
+            this.products.splice(i, 1)
         }
     }
 }
