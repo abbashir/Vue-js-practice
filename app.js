@@ -444,6 +444,32 @@ const TicketApp = {
 
     }
 }
+
+// New App
+const ComponentwithTemplateApp = {
+    data() {
+        return {
+            message: 'Hello'
+        }
+    },
+}
+
+// Define a new component called button-counter
+var a = Vue.createApp(ComponentwithTemplateApp)
+a.component('button-counter', {
+    data: function () {
+      return {
+        count: 0
+      }
+    },
+    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  })
+
+// Mount
+a.mount('#ComponentwithTemplateApp')
+
+
+
 Vue.createApp(app_data).mount('#app')
 Vue.createApp(event_modifier).mount('#event_modifier')
 Vue.createApp(TowWayDataBinding).mount('#TowWayDataBinding')
@@ -451,3 +477,6 @@ Vue.createApp(ConditionalsandLoops).mount('#ConditionalsandLoops')
 Vue.createApp(InvoiceProject).mount('#InvoiceProject')
 Vue.createApp(WatcherApp).mount('#WatcherApp')
 Vue.createApp(TicketApp).mount('#TicketApp')
+
+
+
